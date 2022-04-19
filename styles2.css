@@ -1,0 +1,156 @@
+
+      @keyframes move-twinkle-back{
+    	from {background-position: 0, 0;}
+    	to {background-position: -10000px 5000px;}
+    }
+
+
+
+
+
+
+.stars, .twinkling, .clouds{
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+    	width: 100%;
+    	height: 100%;
+    	display: block;
+    }
+
+
+.stars{
+    	background: #000 url("images/stars.png") repeat top center;
+         z-index: 0;
+    }
+
+.twinkling{
+    background: transparent url("images/twinkling.png")repeat top center;
+    z-index: 1;
+    animation: move-twinkle-back 200s linear infinite;
+}
+
+
+
+.cube__container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 100px auto 0;
+    padding: 65px;
+   transition: all 500ms ease;
+     z-index: 2;
+
+}
+
+.cube {
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: spin 5s infinite linear;
+      z-index: 2;
+
+}
+
+
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid pink;
+    z-index: 2;
+
+   /*   content: url("images/logo3.png"); */
+
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+    z-index: 2;
+
+}
+
+.top:hover {
+    background-color: blue;
+    transition: 500ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    z-index: 2;
+}
+
+.bottom:hover {
+    background-color: blue;
+    transition: 500ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px)
+    z-index: 2;
+}
+
+.right:hover {
+    background-color: blue;
+    transition: 500ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+    z-index: 2;
+}
+
+
+.left:hover {
+    background-color: blue;
+    transition: 500ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+}
+
+.front {
+    transform: rotateX(0deg) translateZ(100px);
+    z-index: 2;
+    
+}
+
+.front:hover {
+    background-color: blue;
+    transition: all 300ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+
+}
+
+.back {
+    transform: rotateX(-180deg) translateZ(100px);
+    z-index: 2;
+}
+
+.back:hover {
+    background-color: blue;
+    transition: 500ms ease;
+    opacity: 0.5;
+    filter:blur(5px);
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+
